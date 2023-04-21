@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="reviewPaymentViewModel"
+            type="com.example.alokozapshopapplication.ui.fragment.reviewpayment.model.ReviewPaymentResponse" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.reviewpayment.ui.ReviewPaymentFragment">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:id="@+id/cvDeliveryInfo"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white_gray"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDeliveryInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeliveryInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:fontFamily="@font/source_sans_pro_bold"
+                    android:maxLines="2"
+                    android:text="@string/delivery_info"
+                    android:textColor="#2D2D2F"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeliveryDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:text="@string/delivery_dates"
+                    android:textColor="#2D2D2F"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@id/tvDeliveryInfo"
+                    app:layout_constraintTop_toBottomOf="@id/tvDeliveryInfo" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeliveryDates"
+                    android:layout_width="85dp"
+                    android:layout_height="27dp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@font/source_sans_pro_bold"
+                    android:text="@={reviewPaymentViewModel.TimeslotDetails.orderDeliveryDate}"
+                    android:textColor="#2D2D2F"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDeliveryDate"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvDeliveryDate"
+                    tools:text="@string/delivery_date_16_12_2000" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeliveryTimes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:textColor="#2D2D2F"
+                    android:text="@string/delivery_time"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@id/tvDeliveryInfo"
+                    app:layout_constraintTop_toBottomOf="@id/tvDeliveryDate" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeliveryTimess"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/source_sans_pro_bold"
+                    tools:text="@string/btn_delivery_time_slot"
+                    android:text="@={reviewPaymentViewModel.TimeslotDetails.orderDeliveryTime}"
+                    android:textColor="#2D2D2F"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDeliveryTimes"
+                    app:layout_constraintEnd_toEndOf="@id/tvDeliveryDates"
+                    app:layout_constraintTop_toTopOf="@id/tvDeliveryTimes" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            style="@style/CustomButton"
+            android:text="@string/home"
+            android:id="@+id/btnHome"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/cvDeliveryInfo"
+            android:backgroundTint="@color/purple_dark_main"/>
+
+        <ProgressBar
+            android:id="@+id/pbProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

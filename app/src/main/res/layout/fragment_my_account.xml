@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="deleteAccount"
+            type="com.example.alokozapshopapplication.ui.fragment.myaccountfragment.viewmodel.deleteaccountviewmodel.DeleteAccountViewModel" />
+
+
+        <variable
+            name="onClick"
+            type="com.example.alokozapshopapplication.ui.fragment.myaccountfragment.clickhandler.ClickListnersFragment" />
+
+        <variable
+            name="profileDataViewModel"
+            type="com.example.alokozapshopapplication.ui.fragment.myaccountfragment.model.profiledata.ProfileResponse" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsUserAuthentication"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clUserAuthentication"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white_light_dark">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvHelloTittle"
+                            style="@style/TittleTextTextView_23_sdp_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:background="@android:color/transparent"
+                            android:text="@string/account_hello_tittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvWelcomeAlo"
+                            style="@style/SmallTextTextView_Welcome_12_sdp_regular_white_light"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:background="@color/white"
+                            android:text="@string/welcome_alokozap"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvHelloTittle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewSignIn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:onClick="@{()-> onClick.signInClick()}"
+                    app:layout_constraintEnd_toStartOf="@+id/cdCardViewSignUp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewHeading">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivUserSignIn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:src="@drawable/ic_user"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSignIn"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:text="@string/account_sign_in"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/ivUserSignIn"
+                            app:layout_constraintStart_toStartOf="@id/ivUserSignIn"
+                            app:layout_constraintTop_toBottomOf="@id/ivUserSignIn" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewSignUp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:onClick="@{()-> onClick.signUpClick()}"
+                    app:layout_constraintBottom_toBottomOf="@id/cdCardViewSignIn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cdCardViewSignIn"
+                    app:layout_constraintTop_toTopOf="@id/cdCardViewSignIn">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivUserSignUp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:src="@drawable/ic_add_user"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSignUp"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:text="@string/account_signup"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/ivUserSignUp"
+                            app:layout_constraintStart_toStartOf="@id/ivUserSignUp"
+                            app:layout_constraintTop_toBottomOf="@id/ivUserSignUp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewCountryGuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.countryClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewSignIn">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvCountryGuest"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/my_account_country"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivCanadaGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_7sdp"
+                            android:src="@drawable/ic_canada"
+                            app:layout_constraintBottom_toBottomOf="@id/tvCountryGuest"
+                            app:layout_constraintEnd_toStartOf="@id/ivArrowRightGuest"
+                            app:layout_constraintTop_toTopOf="@id/tvCountryGuest" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvCountryGuest"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvCountryGuest"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewLanguageGuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewCountryGuest">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvLanguageGuest"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/my_account_language"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSubLanguageGuest"
+                            style="@style/Small_Sub_TextTextView_12_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:text="@string/my_account_sub_language"
+                            app:layout_constraintBottom_toBottomOf="@id/ivArrowRightLanguageGuest"
+                            app:layout_constraintEnd_toStartOf="@id/ivArrowRightLanguageGuest" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightLanguageGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvLanguageGuest"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvLanguageGuest"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewCurrencyGuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.currencyClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewLanguageGuest">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvCurrencyGuest"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/my_account_currency"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSubCurrencyGuest"
+                            style="@style/Small_Sub_TextTextView_12_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:text="@string/my_account_sub_currency"
+                            app:layout_constraintBottom_toBottomOf="@id/ivArrowRightCurrencyGuest"
+                            app:layout_constraintEnd_toStartOf="@id/ivArrowRightCurrencyGuest" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightCurrencyGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvCurrencyGuest"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvCurrencyGuest"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewAboutGuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.aboutAlokozapClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewCurrencyGuest">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvAboutGuest"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_about"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightAboutGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvAboutGuest"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvAboutGuest"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewContactUsGuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.contactUsClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewAboutGuest">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvContactGuest"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_contact"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightContactGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvContactGuest"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvContactGuest"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewHelpGuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.helpClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewContactUsGuest">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvHelpGuest"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_help"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightHelpGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvHelpGuest"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvHelpGuest"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewAuthenticationGuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewHelpGuest">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvVersionGuest"
+                            style="@style/SmallTextTextView_12_sdp_version_regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/my_account_version"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ivFacebookGuest" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivFacebookGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_facebook_account"
+                            app:layout_constraintEnd_toStartOf="@+id/ivInstagramGuest"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivInstagramGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_instagram"
+                            app:layout_constraintBottom_toBottomOf="@id/ivFacebookGuest"
+                            app:layout_constraintEnd_toStartOf="@+id/ivTwitterGuest"
+                            app:layout_constraintStart_toEndOf="@+id/ivFacebookGuest"
+                            app:layout_constraintTop_toTopOf="@id/ivFacebookGuest" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivTwitterGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_twitter"
+                            app:layout_constraintBottom_toBottomOf="@id/ivFacebookGuest"
+                            app:layout_constraintEnd_toStartOf="@+id/ivLinkedinGuest"
+                            app:layout_constraintStart_toEndOf="@+id/ivInstagramGuest"
+                            app:layout_constraintTop_toTopOf="@id/ivFacebookGuest" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivLinkedinGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_linkedin"
+                            app:layout_constraintBottom_toBottomOf="@id/ivFacebookGuest"
+                            app:layout_constraintEnd_toStartOf="@+id/ivYoutubeGuest"
+                            app:layout_constraintStart_toEndOf="@+id/ivTwitterGuest"
+                            app:layout_constraintTop_toTopOf="@id/ivFacebookGuest" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivYoutubeGuest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:src="@drawable/ic_youtube"
+                            app:layout_constraintBottom_toBottomOf="@id/ivFacebookGuest"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivLinkedinGuest"
+                            app:layout_constraintTop_toTopOf="@id/ivFacebookGuest" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/pbProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsUserDashBoard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white_light_dark"
+
+                >
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewUserDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvName"
+                            style="@style/TittleTextTextView_23_sdp_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:background="@color/white"
+                            android:text="@string/account_name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvEmail"
+                            style="@style/SmallTextTextView_Welcome_12_sdp_regular_white_light"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:text="@string/account_email"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvEditProfile"
+                            style="@style/SmallTextTextView_12_sdp_semi_bold_sky_blue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:background="@color/white"
+                            android:onClick="@{()-> onClick.editProfileClick()}"
+                            android:text="@string/edit_profile"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvChangePassword"
+                            style="@style/SmallTextTextView_12_sdp_semi_bold_sky_blue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_25sdp"
+                            android:background="@color/white"
+                            android:onClick="@{()-> onClick.changePasswordClick()}"
+                            android:text="@string/change_password"
+                            app:layout_constraintBottom_toBottomOf="@id/tvEditProfile"
+                            app:layout_constraintStart_toEndOf="@id/tvEditProfile"
+                            app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                            app:layout_constraintTop_toTopOf="@id/tvEditProfile" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewMyOrders"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+
+                    android:onClick="@{()-> onClick.myOrderClick()}"
+                    app:layout_constraintEnd_toStartOf="@+id/cdCardViewMyReturns"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewUserDetails">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivUserMyOrders"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:src="@drawable/ic_my_orders"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvUserMyOrders"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:text="@string/account_my_orders"
+                            app:layout_constraintEnd_toEndOf="@id/ivUserMyOrders"
+                            app:layout_constraintStart_toStartOf="@id/ivUserMyOrders"
+                            app:layout_constraintTop_toBottomOf="@id/ivUserMyOrders" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMyOrdersTotal"
+                            style="@style/SmallTextTextView_14_sdp_regular_sky_blue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:text="@{profileDataViewModel.orderTotal}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/tvUserMyOrders"
+                            app:layout_constraintStart_toStartOf="@id/tvUserMyOrders"
+                            app:layout_constraintTop_toBottomOf="@id/tvUserMyOrders" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewMyReturns"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+
+                    android:onClick="@{()-> onClick.myReturnsClick()}"
+                    app:layout_constraintBottom_toBottomOf="@id/cdCardViewMyOrders"
+                    app:layout_constraintEnd_toStartOf="@id/cdCardViewMyWallet"
+                    app:layout_constraintStart_toEndOf="@+id/cdCardViewMyOrders"
+                    app:layout_constraintTop_toTopOf="@id/cdCardViewMyOrders">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivUserMyReturns"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:src="@drawable/ic_my_returns"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMyReturns"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:text="@string/account_my_returns"
+                            app:layout_constraintEnd_toEndOf="@id/ivUserMyReturns"
+                            app:layout_constraintStart_toStartOf="@id/ivUserMyReturns"
+                            app:layout_constraintTop_toBottomOf="@id/ivUserMyReturns" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMyReturnsTotal"
+                            style="@style/SmallTextTextView_14_sdp_regular_sky_blue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:text="@{profileDataViewModel.returnTotal}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/tvMyReturns"
+                            app:layout_constraintStart_toStartOf="@id/tvMyReturns"
+                            app:layout_constraintTop_toBottomOf="@id/tvMyReturns" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewMyWallet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+
+                    android:onClick="@{()-> onClick.myWalletClick()}"
+                    app:layout_constraintBottom_toBottomOf="@id/cdCardViewMyOrders"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cdCardViewMyReturns"
+                    app:layout_constraintTop_toTopOf="@id/cdCardViewMyOrders">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivUserMyWallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:src="@drawable/ic_my_wallet"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMyWallet"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:text="@string/account_my_wallet"
+                            app:layout_constraintEnd_toEndOf="@id/ivUserMyWallet"
+                            app:layout_constraintStart_toStartOf="@id/ivUserMyWallet"
+                            app:layout_constraintTop_toBottomOf="@id/ivUserMyWallet" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMyWalletMoney"
+                            style="@style/SmallTextTextView_14_sdp_regular_sky_blue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:text="@{profileDataViewModel.walletAmount}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/ivUserMyWallet"
+                            app:layout_constraintStart_toStartOf="@id/ivUserMyWallet"
+                            app:layout_constraintTop_toBottomOf="@id/tvMyWallet" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewMyAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.myAddress()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewMyOrders">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMyAddress"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_my_address"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightMyAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvMyAddress"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvMyAddress"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewMyWishList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:onClick="@{()-> onClick.myWishList()}"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewMyAddress">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMyWishList"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/my_account_my_wish_list"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightMyWishList"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvMyWishList"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvMyWishList"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewMyReviewRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:onClick="@{()-> onClick.myReviewRating()}"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewMyWishList">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMyReviewRating"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_my_review_rating"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightReviewRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvMyReviewRating"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvMyReviewRating"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewReferAndEarn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewMyReviewRating">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvReferAndEarn"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_refer_and_earn"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightReferAndEarn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvReferAndEarn"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvReferAndEarn"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.countryClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewReferAndEarn">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvCountry"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/my_account_country"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivCanada"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_7sdp"
+                            android:src="@drawable/ic_canada"
+                            app:layout_constraintBottom_toBottomOf="@id/tvCountry"
+                            app:layout_constraintEnd_toStartOf="@id/ivArrowRight"
+                            app:layout_constraintTop_toTopOf="@id/tvCountry" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvCountry"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvCountry"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewCountry">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvLanguage"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/my_account_language"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSubLanguage"
+                            style="@style/Small_Sub_TextTextView_12_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:text="@string/my_account_sub_language"
+                            app:layout_constraintBottom_toBottomOf="@id/ivArrowRightLanguage"
+                            app:layout_constraintEnd_toStartOf="@id/ivArrowRightLanguage" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightLanguage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvLanguage"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvLanguage"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewCurrency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.currencyClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewLanguage">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvCurrency"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/my_account_currency"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSubCurrency"
+                            style="@style/Small_Sub_TextTextView_12_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:text="@string/my_account_sub_currency"
+                            app:layout_constraintBottom_toBottomOf="@id/ivArrowRightCurrency"
+                            app:layout_constraintEnd_toStartOf="@id/ivArrowRightCurrency" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightCurrency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvCurrency"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvCurrency"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.aboutAlokozapClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewCurrency">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvAbout"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_about"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightAbout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvAbout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvAbout"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewContactUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.contactUsClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewAbout">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvContact"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_contact"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightContact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvContact"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvContact"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:onClick="@{()-> onClick.helpClick()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewContactUs">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvHelp"
+                            style="@style/SmallTextTextView_14_sdp_semibold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="@dimen/_11sdp"
+                            android:text="@string/my_account_help"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivArrowRightHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/tvHelp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvHelp"
+                            app:srcCompat="@drawable/ic_arrow_right" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeleteAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/delete_an_account"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cdCardViewHelp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogOut"
+                    style="@style/CustomButtonWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:text="@string/my_account_log_out"
+                    android:textColor="@color/purple_dark_main"
+                    app:layout_constraintBottom_toTopOf="@id/cdCardViewAuthentication"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDeleteAccount" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cdCardViewAuthentication"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnLogOut">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvVersion"
+                            style="@style/SmallTextTextView_12_sdp_version_regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:text="@string/my_account_version"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ivFacebook" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivFacebook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_facebook_account"
+                            app:layout_constraintEnd_toStartOf="@+id/ivInstagram"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivInstagram"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_instagram"
+                            app:layout_constraintBottom_toBottomOf="@id/ivFacebook"
+                            app:layout_constraintEnd_toStartOf="@+id/ivTwitter"
+                            app:layout_constraintStart_toEndOf="@+id/ivFacebook"
+                            app:layout_constraintTop_toTopOf="@id/ivFacebook" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivTwitter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_twitter"
+                            app:layout_constraintBottom_toBottomOf="@id/ivFacebook"
+                            app:layout_constraintEnd_toStartOf="@+id/ivLinkedin"
+                            app:layout_constraintStart_toEndOf="@+id/ivInstagram"
+                            app:layout_constraintTop_toTopOf="@id/ivFacebook" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivLinkedin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_linkedin"
+                            app:layout_constraintBottom_toBottomOf="@id/ivFacebook"
+                            app:layout_constraintEnd_toStartOf="@+id/ivYoutube"
+                            app:layout_constraintStart_toEndOf="@+id/ivTwitter"
+                            app:layout_constraintTop_toTopOf="@id/ivFacebook" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivYoutube"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:src="@drawable/ic_youtube"
+                            app:layout_constraintBottom_toBottomOf="@id/ivFacebook"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivLinkedin"
+                            app:layout_constraintTop_toTopOf="@id/ivFacebook" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/pbProgressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

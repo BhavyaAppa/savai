@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+        <data>
+
+            <variable
+                name="timeslotModel"
+                type="com.example.alokozapshopapplication.ui.fragment.deliverytimeslot.model.timeslotmodel.TimeSlotResponse.Data" />
+
+        </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/_8sdp">
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_76sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/purple_dark_main"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                 android:id="@+id/clDeliveryDate">
+
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeliveryDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:fontFamily="@font/source_sans_pro_bold"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/purple_dark_main"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="@{timeslotModel.date}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="@string/delivery_date" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDeliveryDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:gravity="start"
+                    android:text="@{timeslotModel.day}"
+                    app:layout_constraintStart_toStartOf="@id/tvDeliveryDate"
+                    app:layout_constraintEnd_toEndOf="@id/tvDeliveryDate"
+                    app:layout_constraintTop_toBottomOf="@id/tvDeliveryDate"
+                    android:textColor="@color/white_gray"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="@string/delivery_day" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

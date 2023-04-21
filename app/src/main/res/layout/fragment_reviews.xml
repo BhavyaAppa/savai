@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+       <variable
+           name="reviewModel"
+           type="com.example.alokozapshopapplication.ui.fragment.productdetailsdata.model.ProductDetailsResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.reviewsfragment.ui.ReviewsFragment">
+
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lrLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:progressTint="@color/purple_dark_main"
+                    android:ratingbar="@{reviewModel.rating}"
+                    android:isIndicator="true"
+                    android:progressBackgroundTint="@color/white_gray"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvReviews"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:text="@{reviewModel.reviewCount.toString() + ` Reviews`}"
+                    android:textColor="@color/sky_blue"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ratingBar" />
+
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/rating5"
+                    style="@style/RatingBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:numStars="5"
+                    android:isIndicator="true"
+                    android:rating="5"
+                    android:progressTint="@color/purple_dark_main"
+                    android:progressBackgroundTint="@color/purple_dark_main"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvReviews" />
+
+<!--
+                <ProgressBar
+                    android:id="@+id/pbProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+                    android:indeterminateTint="#d60909"
+                    android:progress="100"
+                    app:layout_constraintBottom_toBottomOf="@id/rating5"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating5"
+                    app:layout_constraintTop_toTopOf="@id/rating5"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+
+                    />
+-->
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/pbProgressBar"
+                    style="?attr/linearProgressIndicatorStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+                    android:progress="100"
+                    app:indicatorColor="@color/purple_dark_main"
+                    app:trackColor="@color/white_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/rating5"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating5"
+                    app:layout_constraintTop_toTopOf="@id/rating5"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvReviewsCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:text="@{reviewModel.ratingArray.x5}"
+                    android:textColor="@color/purple_dark_main"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/rating5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rating5"
+
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/rating4"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:numStars="4"
+                    android:rating="5"
+                    android:progressBackgroundTint="@color/purple_dark_main"
+                    android:progressTint="@color/purple_dark_main"
+                    app:layout_constraintEnd_toEndOf="@id/rating5"
+                    app:layout_constraintTop_toBottomOf="@id/rating5" />
+
+          <!--      <ProgressBar
+                    android:id="@+id/pbProgressBar4"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+                   android:indeterminateTint="#d60909"
+
+                    app:layout_constraintBottom_toBottomOf="@id/rating4"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating4"
+                    app:layout_constraintTop_toTopOf="@id/rating4"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+
+                    />-->
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/pbProgressBar4"
+                    style="?attr/linearProgressIndicatorStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+
+                    app:indicatorColor="@color/purple_dark_main"
+                    app:trackColor="@color/white_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/rating4"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating4"
+                    app:layout_constraintTop_toTopOf="@id/rating4"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+                    />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvReviewsCount4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:text="@{reviewModel.ratingArray.x4}"
+                    android:textColor="@color/purple_dark_main"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/rating4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rating4"
+
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/rating3"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:numStars="3"
+                    android:rating="5"
+                    android:progressBackgroundTint="@color/purple_dark_main"
+                    android:progressTint="@color/purple_dark_main"
+                    app:layout_constraintEnd_toEndOf="@id/rating5"
+                    app:layout_constraintTop_toBottomOf="@id/rating4" />
+
+  <!--              <ProgressBar
+                    android:id="@+id/pbProgressBar3"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+                    android:indeterminateTint="#d60909"
+                    android:progress="10"
+                    app:layout_constraintBottom_toBottomOf="@id/rating3"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating3"
+                    app:layout_constraintTop_toTopOf="@id/rating3"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+
+                    />-->
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/pbProgressBar3"
+                    style="?attr/linearProgressIndicatorStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+                    app:indicatorColor="@color/purple_dark_main"
+                    app:trackColor="@color/white_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/rating3"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating3"
+                    app:layout_constraintTop_toTopOf="@id/rating3"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+                    />
+
+
+
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvReviewsCount3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:text="@{reviewModel.ratingArray.x3}"
+                    android:textColor="@color/purple_dark_main"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/rating3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rating3"
+
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/rating2"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:rating="5"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:numStars="2"
+                    android:progressBackgroundTint="@color/purple_dark_main"
+                    android:progressTint="@color/purple_dark_main"
+                    app:layout_constraintEnd_toEndOf="@id/rating5"
+                    app:layout_constraintTop_toBottomOf="@id/rating3" />
+
+   <!--             <ProgressBar
+                    android:id="@+id/pbProgressBar2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+                    android:indeterminateTint="#d60909"
+                    android:progress="10"
+                    app:layout_constraintBottom_toBottomOf="@id/rating2"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating2"
+                    app:layout_constraintTop_toTopOf="@id/rating2"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+
+                    />
+-->
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/pbProgressBar2"
+                    style="?attr/linearProgressIndicatorStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+
+                    app:indicatorColor="@color/purple_dark_main"
+                    app:trackColor="@color/white_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/rating2"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating2"
+                    app:layout_constraintTop_toTopOf="@id/rating2"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvReviewsCount2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:text="@{reviewModel.ratingArray.x2}"
+                    android:textColor="@color/purple_dark_main"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/rating2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rating2"
+
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/rating1"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:rating="1"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:numStars="1"
+                    android:progressBackgroundTint="@color/purple_dark_main"
+                    android:progressTint="@color/purple_dark_main"
+                    app:layout_constraintEnd_toEndOf="@id/rating5"
+                    app:layout_constraintTop_toBottomOf="@id/rating2" />
+<!--
+                <ProgressBar
+                    android:id="@+id/pbProgressBar1"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+                    android:indeterminateTint="#d60909"
+                    android:progress="10"
+                    app:layout_constraintBottom_toBottomOf="@id/rating1"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating1"
+                    app:layout_constraintTop_toTopOf="@id/rating1"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+
+                    />-->
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/pbProgressBar1"
+                    style="?attr/linearProgressIndicatorStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:indeterminate="false"
+                    app:indicatorColor="@color/purple_dark_main"
+                    app:trackColor="@color/white_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/rating1"
+                    app:layout_constraintEnd_toStartOf="@id/tvReviewsCount"
+                    app:layout_constraintStart_toEndOf="@id/rating1"
+                    app:layout_constraintTop_toTopOf="@id/rating1"
+                    app:layout_goneMarginStart="@dimen/_5sdp"
+                  />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvReviewsCoun1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:text="@{reviewModel.ratingArray.x1}"
+                    android:textColor="@color/purple_dark_main"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/rating1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rating1" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReviews"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:backgroundTint="@color/purple_dark_main"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:text="@string/btn_reviews"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp"
+                    app:cornerRadius="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="@id/lrLayout"
+                    app:layout_constraintStart_toStartOf="@id/lrLayout"
+                    app:layout_constraintTop_toBottomOf="@id/lrLayout" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_1sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:background="@color/white_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnReviews" />
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rvRecyclarView"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@id/view"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/recyclar_view_review_list"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

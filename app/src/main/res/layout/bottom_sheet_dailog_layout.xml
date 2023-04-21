@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bottomsheet_dailog_bg"
+        android:layout_height="wrap_content">
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:id="@+id/tvSort"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_delet"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/purple_dark_main"
+            android:text="@string/sort"
+            android:fontFamily="@font/source_sans_pro_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:id="@+id/tvPosition"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_delet"
+            android:textSize="@dimen/_10sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/purple_dark_main"
+            android:text="@string/position"
+            android:fontFamily="@font/source_sans_pro_regular"
+            app:layout_constraintTop_toBottomOf="@+id/tvSort"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:id="@+id/tvLowToHigh"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_delet"
+            android:paddingStart="@dimen/_10sdp"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/purple_dark_main"
+            android:text="@string/lowtohigh"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPosition"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:id="@+id/tvHighToLow"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_delet"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/purple_dark_main"
+            android:text="@string/hightolaw"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvLowToHigh"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:id="@+id/tvBestSeller"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_delet"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/purple_dark_main"
+            android:text="@string/bestseller"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            app:layout_constraintTop_toBottomOf="@+id/tvHighToLow"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

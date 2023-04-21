@@ -1,0 +1,37 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 252 ciObject found
+ciMethod java/lang/Object <init> ()V 4097 1 1027233 0 96
+ciMethod java/lang/Object clone ()Ljava/lang/Object; 3073 1 384 0 -1
+ciMethod java/lang/Class isInterface ()Z 2049 1 256 0 -1
+ciMethod java/lang/Class getTypeParameters ()[Ljava/lang/reflect/TypeVariable; 3113 1 5802 0 2176
+ciMethod java/lang/Class getSuperclass ()Ljava/lang/Class; 2049 1 256 0 -1
+ciMethod java/lang/Class getGenericSuperclass ()Ljava/lang/reflect/Type; 2457 1 2042 0 0
+ciMethod java/lang/Class getInterfaces ()[Ljava/lang/Class; 297 1 5792 0 0
+ciMethod java/lang/Class getInterfaces (Z)[Ljava/lang/Class; 313 1 8238 0 1632
+ciMethod java/lang/Class getInterfaces0 ()[Ljava/lang/Class; 2057 1 257 0 -1
+ciMethod java/lang/Class getGenericInterfaces ()[Ljava/lang/reflect/Type; 2841 1 2244 0 0
+ciMethod java/lang/Class reflectionData ()Ljava/lang/Class$ReflectionData; 2121 1 13590 0 1088
+ciMethod java/lang/Class newReflectionData (Ljava/lang/ref/SoftReference;I)Ljava/lang/Class$ReflectionData; 1561 1 1976 0 0
+ciMethod java/lang/Class getGenericSignature0 ()Ljava/lang/String; 2057 1 257 0 -1
+ciMethod java/lang/Class getFactory ()Lsun/reflect/generics/factory/GenericsFactory; 321 1 199 0 0
+ciMethod java/lang/Class getGenericInfo ()Lsun/reflect/generics/repository/ClassRepository; 2489 1 8690 0 384
+ciMethod java/lang/ref/Reference get ()Ljava/lang/Object; 0 0 1 0 -1
+ciMethod java/lang/ref/Reference <init> (Ljava/lang/Object;)V 2545 1 18177 0 0
+ciMethod java/lang/ref/Reference <init> (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V 2049 1 30315 0 480
+ciMethod java/lang/ref/SoftReference <init> (Ljava/lang/Object;)V 2737 1 5738 0 0
+ciMethod java/lang/ref/SoftReference get ()Ljava/lang/Object; 3081 1 7327 0 160
+ciMethod java/util/Map containsKey (Ljava/lang/Object;)Z 0 0 1 0 -1
+ciMethod java/util/Map get (Ljava/lang/Object;)Ljava/lang/Object; 0 0 1 0 -1
+ciMethod java/util/Map put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 0 0 1 0 -1
+ciMethod java/util/Map remove (Ljava/lang/Object;)Ljava/lang/Object; 0 0 1 0 -1
+ciMethod jdk/internal/misc/Unsafe compareAndSetObject (Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z 3073 1 384 0 -1
+ciMethod java/util/Set add (Ljava/lang/Object;)Z 0 0 1 0 -1
+ciMethod java/util/Set remove (Ljava/lang/Object;)Z 0 0 1 0 -1
+ciMethod java/util/HashSet add (Ljava/lang/Object;)Z 3265 1 27902 0 10400
+ciMethod java/util/HashMap put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 4097 1 36476 0 -1
+ciMethodData java/lang/Object <init> ()V 2 1027238 orig 320 136 116 23 11 1 0 0 0 16 102 44 22 1 0 0 0 88 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 49 85 125 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 248 3 0 0 248 31 0 0 2 0 0 0 0 0 3 0 1 0 0 0 0 0 0 0 0 0 0 0 254 255 255 255 0 0 0 0 0 0 0 0 data 4 0x0 0x9 0x1 0x0 oops 0 methods 0
+ciMethod java/lang/Class$ReflectionData <init> (I)V 2593 1 1976 0 0
+ciMethod java/lang/Class$Atomic casReflectionData (Ljava/lang/Class;Ljava/lang/ref/SoftReference;Ljava/lang/ref/SoftReference;)Z 2593 1 1976 0 0
+ciMethodData java/util/HashSet add (Ljava/lang/Object;)Z 2 27902 orig 320 136 116 23 11 1 0 0 0 168 166 62 22 1 0 0 0 248 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 152 1 0 0 49 91 3 0 1 0 0 0 194 22 0 0 0 0 0 0 0 0 0 0 248 3 0 0 248 31 0 0 2 0 0 0 0 0 11 0 2 0 0 0 0 0 0 0 112 0 0 0 254 255 255 255 5 0 8 0 0 0 0 0 data 24 0x80005 0x0 0x0 0x7f88ed62fcc0 0x13c8 0x7f88eadc9160 0x579e 0xb0007 0x1336 0x38 0x5831 0xf0003 0x5831 0x18 0x0 0x0 0x0 0x0 0x0 0x0 0x9 0x2 0x0 0xffffffffffffffff oops 2

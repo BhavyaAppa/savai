@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.editprofile.ui.EditProfileFragment">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gdEditStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_10sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gdEditEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_10sdp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivUserImage"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_130sdp"
+                    android:layout_marginTop="@dimen/_22sdp"
+                    android:src="@drawable/ic_user"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tlFirstNameEditProfile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivUserImage"
+                    app:layout_constraintEnd_toEndOf="@id/ivUserImage"
+                    android:layout_centerHorizontal="true"
+                    android:elevation="0dp"
+                    app:cardCornerRadius="30dp"
+                    android:backgroundTint="@color/purple_dark_main">
+
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUserImageCamera"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/ic__photo_camera"
+                        app:layout_constraintCircle="@id/ivUserImage"
+                        app:layout_constraintCircleAngle="45"
+                        app:layout_constraintCircleRadius="100dp"
+                        android:layout_gravity="center">
+
+
+                    </com.google.android.material.imageview.ShapeableImageView>
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlFirstNameEditProfile"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:hintTextColor="@color/black_light_dark"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/ivUserImage">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFirstNameEditProfile"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_up_first_name_edittext"
+                        android:inputType="textPersonName"
+
+                        android:textColorHint="@color/white_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlLastNameEditProfile"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tlFirstNameEditProfile">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLastNameEditProfile"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_up_last_name_edittext"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlMobileNoEditProfile"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toEndOf="@id/ccCountryCodeEditProfile"
+                    app:layout_constraintTop_toBottomOf="@id/tlLastNameEditProfile">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMobileEditProfile"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_in_number_edittext"
+                        android:inputType="number"
+                        android:maxEms="14"
+                        android:maxLength="14" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccCountryCodeEditProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sign_up_sign_in_country_code_under_line_selector"
+                    app:ccpDialog_textColor="@color/purple_dark_main"
+                    app:ccp_textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/tlMobileNoEditProfile"
+                    app:layout_constraintEnd_toStartOf="@id/tlMobileNoEditProfile"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEditProfile"
+                    style="@style/CustomButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_13sdp"
+                    android:text="@string/save_profile"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tlMobileNoEditProfile" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

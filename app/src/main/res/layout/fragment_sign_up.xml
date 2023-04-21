@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        
+        <variable
+            name="signViewModel"
+            type="com.example.alokozapshopapplication.ui.fragment.signupfragment.viewmodel.SignUpViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.signupfragment.ui.SignUpFragment">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gdEditStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_10sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gdEditEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_10sdp" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlFirstNameSignUp"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    app:hintTextColor="@color/black_light_dark"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFirstNameSignUp"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_up_first_name_edittext"
+                        android:inputType="textPersonName"
+                        android:text="@={signViewModel.signUpRequestData.firstName}"
+                        android:textColorHint="@color/white_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlLastNameSignUp"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tlFirstNameSignUp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLastNameSignUp"
+                        style="@style/CustomEditText"
+                        android:text="@={signViewModel.signUpRequestData.lastName}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_up_last_name_edittext"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlMobileNoSignUp"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toEndOf="@id/ccCountryCodeSignUp"
+                    app:layout_constraintTop_toBottomOf="@id/tlLastNameSignUp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMobileSignUp"
+                        style="@style/CustomEditText"
+                        android:text="@={signViewModel.signUpRequestData.mobileNumber}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_Up_number_edittext"
+                        android:inputType="number"
+                        android:maxEms="14"
+                        android:maxLength="14" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccCountryCodeSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sign_up_sign_in_country_code_under_line_selector"
+                    app:ccpDialog_textColor="@color/purple_dark_main"
+                    app:ccp_textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/tlMobileNoSignUp"
+                    app:layout_constraintEnd_toStartOf="@id/tlMobileNoSignUp"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlEmailSignUp"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tlMobileNoSignUp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmailSignUp"
+                        style="@style/CustomEditText"
+                        android:text="@={signViewModel.signUpRequestData.email}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_up_email_id_edittext"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlPasswordSignUp"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    app:endIconMode="password_toggle"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tlEmailSignUp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasswordSignUp"
+                        style="@style/CustomEditText"
+                        android:text="@={signViewModel.signUpRequestData.password}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_up_password_edittext"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlConfirmPasswordSignUp"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    app:endIconMode="password_toggle"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tlPasswordSignUp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etConfirmPasswordSignUp"
+                        style="@style/CustomEditText"
+                        android:text="@={signViewModel.signUpRequestData.confirmPassword}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_up_confirm_password_edittext"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlReferralCodeSignUp"
+                    style="@style/CustomEditTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tlConfirmPasswordSignUp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etReferralCodeSignUp"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={signViewModel.signUpRequestData.referralCode}"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/sign_up_referral_code_edittext"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvSignUpEmailSms"
+                    style="@style/SmallTextTextView_12_sdp_regular_black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/sign_up_receive_email_sms"
+                    app:layout_constraintEnd_toStartOf="@id/swOnOff"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tlReferralCodeSignUp" />
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swOnOff"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:thumb="@drawable/custom_switch_thumb"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSignUpEmailSms"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintTop_toTopOf="@id/tvSignUpEmailSms"
+                    app:track="@drawable/custom_switch_track" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTermsPrivacy"
+                    style="@style/SmallTextTextView_12_sdp_regular_black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    android:text="@string/sign_up_terms_privacy"
+                    app:layout_constraintEnd_toEndOf="@id/tvSignUpEmailSms"
+                    app:layout_constraintStart_toStartOf="@id/tlFirstNameSignUp"
+                    app:layout_constraintTop_toBottomOf="@id/tvSignUpEmailSms" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSignUp"
+                    style="@style/CustomButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->signViewModel.signUpValidate()}"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/sign_in_button_sign_up"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tvTermsPrivacy" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvSignInWith"
+                    style="@style/SmallTextTextView_14_sdp_regular_black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/sign_up_sign_up_with"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivGoogleSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_google"
+                    app:layout_constraintEnd_toStartOf="@+id/ivFacebookSignUp"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/tvSignInWith" />
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivFacebookSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_facebook"
+                    app:layout_constraintBottom_toBottomOf="@id/ivGoogleSignUp"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toEndOf="@+id/ivGoogleSignUp"
+                    app:layout_constraintTop_toTopOf="@id/ivGoogleSignUp" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvAlreadyAccountSignIn"
+                    style="@style/SmallTextTextView_14_sdp_regular_black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/sign_up_already_Account"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toStartOf="@id/gdEditStart"
+                    app:layout_constraintTop_toBottomOf="@id/ivGoogleSignUp" />
+
+                <ProgressBar
+                    android:id="@+id/pbProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_17sdp"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tlEmailSignUp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

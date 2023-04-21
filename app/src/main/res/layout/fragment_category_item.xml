@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="categorySubItemViewModel"
+            type="com.example.alokozapshopapplication.ui.fragment.subcategoryfragment.viewmodel.CategoryItemViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.subcategoryfragment.ui.CategoryItemFragment">
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tlCategoryItem"
+            style="@style/TabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_37sdp"
+            app:tabMinWidth="0dp"
+            app:tabPaddingStart="10dp"
+            app:tabTextColor="@color/purple_dark_main"
+            app:tabGravity="start"
+            android:padding="@dimen/_1sdp"
+            android:orientation="vertical"
+            app:tabIndicatorHeight="@dimen/_3sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabMode="scrollable">
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpCategoryItem"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tlCategoryItem" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/rvRecyclarView"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/recylar_view_sub_category_item"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvViewItem" />
+
+        <ProgressBar
+            android:id="@+id/pbProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cvViewItem"
+            android:shadowColor="@color/white_gray"
+            app:cardElevation="@dimen/_6sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tlCategoryItem">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/cvSort"
+                    app:cardCornerRadius="0dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/vDivide1"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_10sdp">
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_sort"
+                            android:id="@+id/ivSort"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tvSort"
+                            app:layout_constraintTop_toTopOf="@id/tvSort"
+                            app:layout_constraintBottom_toBottomOf="@id/tvSort"
+                            android:layout_marginStart="@dimen/_5sdp" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/category_item_sort"
+                            android:id="@+id/tvSort"
+                            app:layout_constraintStart_toEndOf="@id/ivSort"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textColor="@color/purple_dark_main"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:id="@+id/vDivide1"
+                    android:background="@color/white_light_color"
+                    app:layout_constraintStart_toEndOf="@id/cvSort"
+                    app:layout_constraintEnd_toStartOf="@id/cvFilter"
+                    app:layout_constraintTop_toTopOf="@id/cvSort"
+                    app:layout_constraintBottom_toBottomOf="@id/cvSort" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/cvFilter"
+                    app:layout_constraintStart_toEndOf="@id/vDivide1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/vDivide2"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/clFilter"
+                        android:padding="@dimen/_10sdp">
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_filter"
+                            android:id="@+id/ivFilter"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tvFilter"
+                            app:layout_constraintTop_toTopOf="@id/tvFilter"
+                            app:layout_constraintBottom_toBottomOf="@id/tvFilter"
+                            android:layout_marginStart="@dimen/_5sdp" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/category_item_filter"
+                            android:id="@+id/tvFilter"
+                            app:layout_constraintStart_toEndOf="@id/ivFilter"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textColor="@color/purple_dark_main"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:id="@+id/vDivide2"
+                    android:background="@color/white_light_color"
+                    app:layout_constraintStart_toEndOf="@id/cvFilter"
+                    app:layout_constraintEnd_toStartOf="@id/cvList"
+                    app:layout_constraintTop_toTopOf="@id/cvSort"
+                    app:layout_constraintBottom_toBottomOf="@id/cvSort" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/cvList"
+                    app:layout_constraintStart_toEndOf="@id/vDivide2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_10sdp">
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_grid_view"
+                            android:id="@+id/ivList"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tvList"
+                            app:layout_constraintTop_toTopOf="@id/tvList"
+                            app:layout_constraintBottom_toBottomOf="@id/tvList"
+                            android:layout_marginStart="@dimen/_5sdp" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/category_item_list"
+                            android:id="@+id/tvList"
+                            app:layout_constraintStart_toEndOf="@id/ivList"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textColor="@color/purple_dark_main"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

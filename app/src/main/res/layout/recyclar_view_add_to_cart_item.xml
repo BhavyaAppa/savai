@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="addToCartItemViewModel"
+            type="com.example.alokozapshopapplication.ui.fragment.cartfragment.model.addtocartitem.AddToCartItemResponse.Item" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvAddToCart"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white_gray"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivAddToCart"
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_alokozap_app_logo" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvAddToCartItemName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/source_sans_pro_bold"
+                    android:maxLines="2"
+                    android:text="@={addToCartItemViewModel.name}"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_light_dark"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivAddToCart"
+                    app:layout_constraintTop_toTopOf="@id/ivAddToCart"
+                    tools:text="@string/add_cart_item_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvItemPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:gravity="start"
+                    android:text="@={addToCartItemViewModel.formattedFinalPrice}"
+                    android:textColor="@color/purple_dark_main"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@id/tvAddToCartItemName"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddToCartItemName"
+                    tools:text="@string/aed_14_29" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="tvItemPrice"
+                    app:layout_constraintBottom_toBottomOf="@id/tvItemPrice"
+                    app:layout_constraintTop_toTopOf="@id/tvItemPrice" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvItemPriceOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:foreground="@drawable/strike_text"
+                    android:text="@={addToCartItemViewModel.formattedPrice}"
+                    android:textColor="@color/white_light_shadow"
+                    android:textSize="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvItemPrice"
+                    app:layout_constraintStart_toEndOf="@id/barrier"
+                    app:layout_constraintTop_toTopOf="@id/tvItemPrice"
+                    tools:ignore="UnusedAttribute"
+                    tools:text="@string/aed_28_57" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvQtySelect"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:backgroundTint="#F3F4F7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvAddToCartDelete"
+                    app:layout_constraintTop_toBottomOf="@id/ivAddToCart"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tlQty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            app:boxStrokeColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <!--                            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                                            android:id="@+id/spinnerQty"
+                                                            style="@style/AppEditText.DropDown.Regular"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="match_parent"
+                                                            android:text="@={addToCartItemViewModel.qty}"
+                                                            android:layout_gravity="center"
+                                                            android:gravity="center"
+                                                            android:paddingStart="@dimen/_10sdp"
+                                                            android:fontFamily="@font/source_sans_pro_bold"
+                                                            android:textColor="@color/purple_dark_main"
+                                                            android:textSize="@dimen/_10sdp"
+                                                            app:boxStrokeColor="@color/white" />-->
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvSpinnerQty"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="@string/qty_1"
+                                android:gravity="center"
+                                android:paddingEnd="@dimen/_5sdp"
+                                android:drawableEnd="@drawable/ic_arrow_down"
+                                android:text="@{`QTY: `+ addToCartItemViewModel.qty}"
+                                android:fontFamily="@font/source_sans_pro_regular"
+                                android:textColor="@color/purple_dark_main"
+                                android:textSize="@dimen/_13sdp"
+                                android:textColorHint="@color/purple_dark_main"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvAddToCartDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:drawableStart="@drawable/ic_delete"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/add_to_cart_delet"
+                    android:textColor="@color/sky_blue"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/cvQtySelect"
+                    app:layout_constraintStart_toEndOf="@id/cvQtySelect"
+                    app:layout_constraintStart_toStartOf="@id/tvAddToCartItemName"
+                    app:layout_constraintTop_toTopOf="@id/cvQtySelect" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvAddToCartWishList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_17sdp"
+                    android:drawableStart="@drawable/ic_heart_icon_add"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/add_to_cart_wishlist"
+                    android:textColor="@color/sky_blue"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/cvQtySelect"
+                    app:layout_constraintStart_toEndOf="@id/tvAddToCartDelete"
+                    app:layout_constraintTop_toTopOf="@id/cvQtySelect" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

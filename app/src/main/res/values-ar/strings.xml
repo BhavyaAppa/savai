@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AlokozapShopApplication</string>
+    <string name="bottom_home">بيت</string>
+    <string name="add_new_address" translatable="false">+ إضافة عنوان جديد</string>
+    <string name="bottom_category" translatable="false">فئة</string>
+    <string name="bottom_deal" translatable="false">اتفاق!</string>
+    <string name="bottom_my_account" translatable="false">حسابي</string>
+    <string name="bottom_cart" translatable="false">عربة التسوق</string>
+    <string name="welcome_alokozap" translatable="false">مرحبا بكم في AlokozapShop</string>
+    <string name="account_sign_in" translatable="false">تسجيل الدخول</string>
+    <string name="account_signup" translatable="false">اشتراك</string>
+    <string name="my_account_country" translatable="false">دولة</string>
+    <string name="my_account_language" translatable="false">لغة</string>
+    <string name="my_account_sub_language" translatable="false">الإنجليزية (كندا)</string>
+    <string name="my_account_currency" translatable="false">عملة</string>
+    <string name="my_account_sub_currency">نذل - وغد</string>
+    <string name="my_account_about" translatable="false">حول AlokozayShop</string>
+    <string name="my_account_contact" translatable="false">اتصل بنا</string>
+    <string name="my_account_help" translatable="false">يساعد</string>
+    <string name="my_account_version" translatable="false">الإصدار: 3.8 Prod 09.01.23.0</string>
+    <string name="sign_in_email_id_edittext" translatable="false">عنوان الايميل*</string>
+    <string name="sign_in_password_edittext" translatable="false">كلمة المرور*</string>
+    <string name="sign_in_text_or" translatable="false">أو</string>
+    <string name="sign_in_button_sign_in" translatable="false">تسجيل الدخول</string>
+    <string name="sign_in_text_dont_account_forgot_password" translatable="false">ليس لديك حساب؟ تسجيل | هل نسيت كلمة السر؟</string>
+    <string name="sign_in_text_dont_account_sign_in_with" translatable="false">أو قم بتسجيل الدخول باستخدام</string>
+    <string name="sign_in_number_edittext" translatable="false">رقم الهاتف المحمول*</string>
+    <string name="sign_up_first_name_edittext" translatable="false">الاسم الأول*</string>
+    <string name="sign_up_last_name_edittext" translatable="false">اسم العائلة*</string>
+    <string name="sign_up_email_id_edittext" translatable="false">عنوان الايميل*</string>
+    <string name="sign_up_password_edittext" translatable="false">كلمة المرور*</string>
+    <string name="sign_Up_number_edittext" translatable="false">رقم الهاتف المحمول*</string>
+    <string name="sign_up_confirm_password_edittext" translatable="false">تأكيد كلمة المرور*</string>
+    <string name="sign_up_referral_code_edittext" translatable="false">إحالة قانون (اختياري)</string>
+    <string name="sign_up_receive_email_sms" translatable="false">نعم ، أرغب في تلقي رسائل البريد الإلكتروني والرسائل النصية القصيرة بخصوص العروض الترويجية والعروض الخاصة.</string>
+    <string name="sign_in_button_sign_up" translatable="false">اشتراك</string>
+    <string name="sign_up_sign_up_with" translatable="false">أو اشترك مع</string>
+    <string name="sign_up_already_Account" translatable="false">هل لديك حساب؟ تسجيل الدخول</string>
+    <string name="forgot_password" translatable="false">هل نسيت كلمة السر</string>
+    <string name="forgot_password_otp" translatable="false">الرجاء إدخال عنوان البريد الإلكتروني الخاص بك أو رقم الهاتف المحمول. سوف تتلقى OTP لإعادة تعيين كلمة المرور الخاصة بك.</string>
+    <string name="forgot_password_orr" translatable="false">أو</string>
+    <string name="forgot_password_or" translatable="false">أو</string>
+    <string name="forgot_password_send" translatable="false">يرسل</string>
+    <string name="select_country" translatable="false">حدد الدولة</string>
+    <string name="select_currency" translatable="false">اختر العملة</string>
+    <string name="select_language" translatable="false">اختار اللغة</string>
+    <string name="select_country_uae" translatable="false">الإمارات العربية المتحدة</string>
+    <string name="select_country_canada" translatable="false">كندا</string>
+    <string name="select_country_cyprus" translatable="false">قبرص</string>
+    <string name="Arabic" translatable="false">select_lanaguage_arabic</string>
+</resources>

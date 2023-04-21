@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="referModel"
+            type="com.example.alokozapshopapplication.ui.fragment.referfragment.model.ReferResponse" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_light_color"
+        tools:context=".ui.fragment.referfragment.ui.ReferFriendsFragment">
+
+        <include
+            android:id="@+id/tbToolbar"
+            layout="@layout/custom_toolbar_expandable" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cdViewRewardsHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbToolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvViewRewardsHistory"
+                    style="@style/SmallTextTextView_14_sdp_semibold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableEnd="@drawable/ic_arrow_right"
+                    android:paddingVertical="@dimen/_11sdp"
+                    android:paddingStart="@dimen/_7sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:text="@string/view_revards_history"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cdYourReferCode"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cdViewRewardsHistory">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvInvitation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:text="@string/your_invitation_code"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/_40sdp"
+                    android:background="@drawable/dotted_line_code"
+                    android:foregroundGravity="center"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTapCopy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvInvitation"
+                    app:layout_constraintTop_toTopOf="@id/tvCode" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:letterSpacing="0.5"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@{referModel.referralCode}"
+                    android:textColor="@color/black_light_dark"
+                    android:textSize="@dimen/_25sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/view"
+                    app:layout_constraintStart_toStartOf="@+id/view"
+                    app:layout_constraintTop_toBottomOf="@id/tvInvitation" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTapCopy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/tap_copy"
+                    android:textColor="@color/black_light_dark"
+                    android:textSize="@dimen/_18sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/view"
+                    app:layout_constraintStart_toStartOf="@+id/view"
+                    app:layout_constraintTop_toBottomOf="@id/tvCode" />
+
+
+                <View
+                    android:id="@+id/viewLine1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/white_gray"
+                    app:layout_constraintEnd_toStartOf="@id/tvShareCode"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvShareCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/share_code"
+                    android:textColor="@color/black_light_dark"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/viewLine1"
+                    app:layout_constraintEnd_toStartOf="@id/viewLine2"
+                    app:layout_constraintStart_toEndOf="@id/viewLine1"
+                    app:layout_constraintTop_toTopOf="@id/viewLine1" />
+
+
+                <View
+                    android:id="@+id/viewLine2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/white_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvShareCode"
+                    app:layout_constraintTop_toBottomOf="@id/view" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnApply"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:backgroundTint="@color/purple_dark_main"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:text="@string/btn_apply_share_code"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="@id/tvShareCode"
+                    app:layout_constraintStart_toStartOf="@id/tvShareCode"
+                    app:layout_constraintTop_toBottomOf="@id/tvShareCode" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ProgressBar
+                android:id="@+id/pbProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_100sdp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/purple_dark_main"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

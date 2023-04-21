@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/frameParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000">
+        <LinearLayout
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/progressbar_background_white_layout"
+            android:gravity="center"
+            android:minWidth="45dp"
+            android:minHeight="45dp"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+            <ProgressBar
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/purple_dark_main"
+                android:indeterminateTintMode="src_atop"
+                android:visibility="visible" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>

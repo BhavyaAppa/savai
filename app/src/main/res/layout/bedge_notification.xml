@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="addToCartTotalViewModel"
+            type="com.example.alokozapshopapplication.ui.fragment.cartfragment.model.addtocartitem.AddToCartItemResponse" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtViewPresentableCount"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/circular_textview_count_rating"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{addToCartTotalViewModel.cartCount}"
+            tools:text="@string/txtviewPresentableCount"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+
+            app:layout_constraintCircleAngle="25"
+            app:layout_constraintCircleRadius="@dimen/_30sdp"
+
+
+     />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

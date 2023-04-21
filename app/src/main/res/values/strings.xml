@@ -1,0 +1,356 @@
+<resources>
+    <string name="app_name">AlokozapShopApplication</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+
+    // ---------------Bottom Navigation Menu Name--------------
+    <string name="bottom_home">Home</string>
+    <string name="bottom_category">Category</string>
+    <string name="bottom_deal" translatable="false">DEAL!</string>
+    <string name="bottom_my_account">My Account</string>
+    <string name="bottom_cart">Cart</string>
+
+    // ----------------MyAccount Menu DashBoard------------------
+    <string name="account_hello_tittle" translatable="false">Hello!</string>
+    <string name="welcome_alokozap">Welcome To AlokozapShop</string>
+    <string name="account_sign_in">SignIn</string>
+    <string name="account_signup">Sign Up</string>
+    <string name="my_account_country">Country</string>
+    <string name="my_account_language">Language</string>
+    <string name="my_account_sub_language">English(Canada)</string>
+    <string name="my_account_currency">Currency</string>
+    <string name="my_account_sub_currency">CAD</string>
+    <string name="my_account_about">About AlokozayShop</string>
+    <string name="my_account_contact">Contact Us</string>
+    <string name="my_account_help">Help</string>
+    <string name="my_account_version">Version : 3.8 Prod 09.01.23</string>
+
+    // ------------------------Sign In Screen-------------------------------------------
+    <string name="sign_in_email_id_edittext">Email ID*</string>
+    <string name="sign_in_password_edittext">Password*</string>
+    <string name="sign_in_text_or">OR</string>
+    <string name="sign_in_button_sign_in">SIGN IN</string>
+    <string name="sign_in_text_dont_account_forgot_password">Don\'t have an account?\tSign Up\t\t|\tForgot Password?</string>
+    <string name="sign_in_text_dont_account_sign_in_with">Or SignIn with</string>
+    <string name="sign_in_number_edittext">Mobile Number*</string>
+
+    // ---------------------Sign UP Screen-------------------------------------
+    <string name="sign_up_first_name_edittext">First Name*</string>
+    <string name="sign_up_last_name_edittext">Last Name*</string>
+    <string name="sign_up_email_id_edittext">Email ID*</string>
+    <string name="sign_up_password_edittext">Password*</string>
+    <string name="sign_Up_number_edittext">Mobile Number*</string>
+    <string name="sign_up_confirm_password_edittext">Confirm Password*</string>
+    <string name="sign_up_referral_code_edittext">Referral Code (Optional)</string>
+    <string name="sign_up_receive_email_sms">Yes, I would like to receive emails and SMS regarding the promotions and special offers.</string>
+    <string name="sign_up_terms_privacy" translatable="false"><![CDATA[By Signing Up, you agree to Alokozay\'s Terms & Conditions and Privacy Policy]]></string>
+    <string name="sign_in_button_sign_up">SIGN UP</string>
+    <string name="sign_up_sign_up_with">Or Sign Up With</string>
+    <string name="sign_up_already_Account">"Already have an account?\tSign In "</string>
+
+    // ---------------------Forgot Screen----------------------------------------
+    <string name="forgot_password">FORGOT PASSWORD</string>
+    <string name="forgot_password_otp">Please enter your email address or mobile number. You will receive an OTP to reset your password.</string>
+    <string name="forgot_password_orr">OR</string>
+    <string name="forgot_password_or">OR</string>
+    <string name="forgot_password_send">SEND</string>
+    <string name="select_country">SELECT COUNTRY</string>
+    <string name="select_currency">SELECT CURRENCY</string>
+    <string name="select_language">SELECT LANGUAGE</string>
+    <string name="select_country_canada">Canada</string>
+    <string name="select_country_uae">UAE</string>
+    <string name="select_country_cyprus">Cyprus</string>
+    <string name="Arabic">select_lanaguage_arabic</string>
+    <string name="select_language_arabic" translatable="false">Arabic</string>
+    <string name="select_language_canada" translatable="false">Canada</string>
+    <string name="select_language_english" translatable="false">English</string>
+    <string name="select_currency_aed" translatable="false">AED</string>
+    <string name="login_sucessfully" translatable="false">Login Successfully</string>
+    <string name="edit_profile" translatable="false">Edit Profile</string>
+    <string name="change_password" translatable="false">Change Password</string>
+    <string name="account_name" translatable="false">Savai Solanki</string>
+    <string name="account_email" translatable="false">savai.solanki@brainvire.com</string>
+    <string name="account_my_orders" translatable="false">My Orders</string>
+    <string name="account_my_returns" translatable="false">My Returns</string>
+    <string name="account_my_wallet" translatable="false">My Wallet</string>
+    <string name="account_my_wallet_money" translatable="false">0</string>
+    <string name="account_my_returns_total" translatable="false">0</string>
+    <string name="account_my_orders_total" translatable="false">85</string>
+    <string name="my_account_refer_and_earn" translatable="false">Refer and Earn</string>
+    <string name="my_account_my_review_rating" translatable="false"><![CDATA[My Reviews & Rating]]></string>
+    <string name="my_account_my_wish_list" translatable="false">My Wishlist</string>
+    <string name="my_account_my_address" translatable="false">My Addresses</string>
+    <string name="my_account_log_out" translatable="false">LOG OUT</string>
+    <string name="delete_an_account" translatable="false">Delete an account</string>
+    <string name="new_password" translatable="false">New Password</string>
+    <string name="confirm_new_password" translatable="false">Confirm New Password</string>
+    <string name="current_password" translatable="false">Current Password</string>
+    <string name="change_password_button" translatable="false"> UPDATE PASSWORD</string>
+    <string name="change_password_change" translatable="false">CHANGE PASSWORD</string>
+    <string name="save_profile" translatable="false">SAVE</string>
+    <string name="mews_media" translatable="false"><![CDATA[News & Media]]></string>
+    <string name="news_media" translatable="false"><![CDATA[News & Media]]></string>
+    <string name="shipping_delivery" translatable="false"><![CDATA[Shipping & Delivery]]></string>
+    <string name="refunds_exchange" translatable="false"><![CDATA[Refunds & Exchange Policy]]></string>
+    <string name="privacy_statement" translatable="false">Privacy Statement</string>
+    <string name="terms_conditions" translatable="false"><![CDATA[Terms & Conditions]]></string>
+    <string name="search" translatable="false">Search</string>
+
+    <string name="continue_btn" translatable="false">CONTINUE</string>
+    <string name="category_item_sort" translatable="false">SORT</string>
+    <string name="category_item_filter" translatable="false">FILTER</string>
+    <string name="category_item_list" translatable="false">LIST</string>
+
+    <string name="new_item" translatable="false">New</string>
+    <string name="new_item_discount_off" translatable="false">20% OFF</string>
+    <string name="new_item_name" translatable="false">WOODEN TEA BOX</string>
+    <string name="new_item_price" translatable="false">AED 160.00</string>
+    <string name="new_item_price_Off" translatable="false">AED 200.00</string>
+    <string name="add_to_cart" translatable="false">ADD TO CART</string>
+    <string name="add_to_cart_minus" translatable="false">-</string>
+    <string name="add_to_cart_plus" translatable="false">+</string>
+    <string name="otp_verification" translatable="false">OTP VERIFICATION</string>
+    <string name="otp_text" translatable="false">OTP has been sent to your Mobile number +965 (581) - 307-6902</string>
+    <string name="otp_verify" translatable="false">Verify</string>
+    <string name="enter_otp" translatable="false">Enter Otp</string>
+    <string name="resend_otp" translatable="false">Resend</string>
+    <string name="contact_us_full_name" translatable="false">Full Name*</string>
+    <string name="submit_btn" translatable="false">SUBMIT</string>
+    <string name="get_touch" translatable="false">If you have a question, query or comment, please feel free to get in touch and our friendly team will be delighted to help you.</string>
+    <string name="write_message" translatable="false">Write Message*</string>
+    <string name="view_all" translatable="false">VIEW ALL</string>
+    <string name="login_unsucessfully" translatable="false">Login UncessFully</string>
+    <string name="yes" translatable="false">Yes</string>
+    <string name="no" translatable="false">No</string>
+    <string name="choose_gift" translatable="false"><![CDATA[Choose a gift of The Holy Quran for orders AED 100 & Above]]></string>
+    <string name="get_free_shipping" translatable="false">Just Remaining AED 35.71 To Get Free Shipping</string>
+    <string name="start_range" translatable="false">AED 0.00</string>
+    <string name="end_range" translatable="false">AED 50.00</string>
+    <string name="select_gift" translatable="false">Select your FREE GIFT</string>
+    <string name="btn_apply_Discount_code" translatable="false">APPLY</string>
+    <string name="enter_discount_code" translatable="false">Enter Discount Code</string>
+    <string name="empty_shoping_cart" translatable="false">Empty Shoping Cart</string>
+    <string name="order_summary" translatable="false">Order Summary</string>
+    <string name="order_total" translatable="false">Order Total</string>
+    <string name="vat" translatable="false">VAT:</string>
+    <string name="total" translatable="false">Total(Ext.VAT)</string>
+    <string name="order_shipping_handling" translatable="false"><![CDATA[Shipping & Handling]]></string>
+    <string name="order_sub_total" translatable="false">Subtotal</string>
+    <string name="order_total_aed" translatable="false">AED 14.29</string>
+    <string name="vat_aed" translatable="false">AED 0.68</string>
+    <string name="total_aed" translatable="false">AED 13.61</string>
+    <string name="order_shipping_handling_aed" translatable="false">AED 0.00</string>
+    <string name="order_sub_total_aed" translatable="false">AED 14.29</string>
+    <string name="save_aed" translatable="false">You will save AED 19.70 on this order</string>
+    <string name="total_proceed" translatable="false">Total</string>
+    <string name="btn_proceed_buy" translatable="false">PROCEED TO BUY</string>
+    <string name="add_cart_item_name" translatable="false">Rooibos organic herbal tea - 25 teabags in foil wrapped envelopes</string>
+    <string name="aed_14_29" translatable="false">AED 14.29</string>
+    <string name="aed_28_57" translatable="false">AED 28.57</string>
+    <string name="qty_1" translatable="false">QTY:1</string>
+    <string name="add_to_cart_delet" translatable="false">Delete</string>
+    <string name="add_to_cart_wishlist" translatable="false">Move to Wishlist</string>
+    <string name="shipped_free" translatable="false">Your Order Will Be Shipped For Free</string>
+    <string name="empy_cart" translatable="false">Empty Cart</string>
+    <string name="empty_no_item" translatable="false">You have no items in your cart</string>
+    <string name="pick_delivery_slot" translatable="false">Pick a Delivery Slot</string>
+    <string name="btn_delivery_time_slot" translatable="false">9:00 AM -9:00 PM</string>
+    <string name="delivery_date" translatable="false">21-02-2023</string>
+    <string name="delivery_day" translatable="false">Tomorrow</string>
+    <string name="delivery_info" translatable="false">Delivery Information</string>
+    <string name="delivery_dates" translatable="false">Delivery Date</string>
+    <string name="delivery_date_16_12_2000" translatable="false">16-12-2000</string>
+    <string name="delivery_time" translatable="false">Delivery Time</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="txtviewPresentableCount" translatable="false">2</string>
+    <string name="review" translatable="false">1 Reviews</string>
+    <string name="aed_1_05_per_diaper" translatable="false">AED 1.05 PER Diaper</string>
+    <string name="item_description" translatable="false"><![CDATA[Alokozay Premium Green Tea is 100% Pure Ceylon Tea that is loved worldwide for its distinctive taste, aroma and colour.r\nAlokozay has a team of expert tea tasters trained in the science of tea. Each one plays a vital role in ensuring that all the tea varieties are blended perfectly to meet the highest and most stringent quality standards.
+    The seasoned tea tasters work in a state-of-the-art lab where they use their sharp sense of sight, smell, touch and taste to judge the quality of the blend. These qualified professionals bring in-depth knowledge about the prevailing market conditions, consumer preferences and manufacturing techniques]]></string>
+    <string name="item_ingrediants" translatable="false"><![CDATA[Pure Ceylon Green Tear\nNUTRITION FACTSr 100ml tea infusion prepared as directed (with no milk and sugar) Typically gives you:r\nEnergy - 2kJ/<1kcalr\nProtein - 0.1 gr\nCarbohydrates of which sugars - 0gr\nFat of which saturates - 0gr\nFibre - 0gr\nSodium - 0gr\nr\n]]></string>
+    <string name="review_count" translatable="false">5</string>
+    <string name="review_count1" translatable="false">1</string>
+    <string name="review_count2" translatable="false">2</string>
+    <string name="review_count3" translatable="false">3</string>
+    <string name="review_count4" translatable="false">4</string>
+    <string name="btn_reviews" translatable="false">Write A Review</string>
+    <string name="write_review" translatable="false">WRITE  A  REVIEW</string>
+    <string name="write_review_rate" translatable="false">Rate the Product</string>
+    <string name="enter_name" translatable="false">Enter Name</string>
+    <string name="enter_summery" translatable="false">Enter Summary</string>
+    <string name="Write_comment" translatable="false">Write a Comment</string>
+    <string name="challenge_title_max_length" translatable="false">250</string>
+    <string name="digits_challenge_title_desc" translatable="false">400</string>
+    <string name="user_name" translatable="false">Reviews by Savai</string>
+    <string name="reviewer_time" translatable="false">(Posted on 2022-11-09 06:45:05)</string>
+    <string name="reviewer_comment" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis nulla pellentesque quam efficitur gravida.</string>
+    <string name="view_revards_history" translatable="false">View Rewards History</string>
+    <string name="your_invitation_code" translatable="false">YOUR INVITATION CODE</string>
+    <string name="tap_copy" translatable="false">Tap to copy</string>
+    <string name="code" translatable="false">s a v a i </string>
+    <string name="share_code" translatable="false"> Or share code</string>
+    <string name="btn_apply_share_code" translatable="false">SHARE</string>
+    <string name="refer_and_earn" translatable="false">REFER AND EARN</string>
+    <string name="reward_history" translatable="false">REWARD HISTORY</string>
+    <string name="no_transaction" translatable="false">No transacton available</string>
+    <string name="total_rewards_value" translatable="false">TOTAL REWARDS : %1$s</string>
+    <string name="cancel" translatable="false">Cancel</string>
+    <string name="aed_0_00" translatable="false">AED 0.00</string>
+
+
+    <!--Labels-->
+    <string name="label_sign_up" translatable="false">Don\'t have an account? SIGN UP</string>
+    <string name="label_enter_email" translatable="false">Email address</string>
+    <string name="label_enter_password" translatable="false">Password</string>
+    <string name="label_sign_in" translatable="false">SIGN IN</string>
+    <string name="label_login_using_thum" translatable="false">Login Using Biometric</string>
+    <string name="label_login" translatable="false">LOGIN</string>
+    <string name="label_signup_screen" translatable="false">Create Account</string>
+    <string name="label_email" translatable="false">Email ID</string>
+    <string name="label_password" translatable="false">Password</string>
+    <string name="label_submit" translatable="false">Submit</string>
+    <string name="label_forgot_your_password" translatable="false">Forgot Your Password?</string>
+    <string name="label_forgot_password" translatable="false">Forgot Password</string>
+    <string name="label_forgot_password_hint" translatable="false">Enter Email ID and we\'ll send you an Email Verification Link</string>
+    <string name="label_enter_register_email" translatable="false">Enter Your Registered Email ID</string>
+    <string name="label_cancel" translatable="false">Cancel</string>
+    <string name="no_internet" translatable="false">No Internet Connection</string>
+    <string name="label_response_error" translatable="false">We are sorry, something went wrong. Please try again later</string>
+    <string name="label_no_internet_message" translatable="false">You are not connected to the internet, Make sure Wi-Fi is on,
+        Airplane Mode is off and try again.
+    </string>
+    <string name="label_confirm_new_password" translatable="false">Confirm password</string>
+    <string name="label_reset_password" translatable="false">Reset Password</string>
+    <string name="label_change_password" translatable="false">Change Password</string>
+    <string name="label_result_api" translatable="false">Activity Result Api</string>
+    <string name="label_enter_first_name" translatable="false">FirstName</string>
+    <string name="label_enter_lastname" translatable="false">LastName</string>
+    <string name="label_gender" translatable="false">Gender</string>
+    <string name="label_male" translatable="false">Male</string>
+    <string name="label_female" translatable="false">Female</string>
+    <string name="label_date_of_birth" translatable="false">Date of birth</string>
+    <string name="label_mobile_number" translatable="false">Mobile number</string>
+    <string name="label_country" translatable="false">Country</string>
+    <string name="label_new_password" translatable="false">New password</string>
+    <string name="label_state" translatable="false">State</string>
+    <string name="label_city" translatable="false">City</string>
+    <string name="terms_privacy_policy" translatable="false"><![CDATA[By logging in, you agree to our <font color=#FF5721>Terms</font> and that you have read our <font color=#FF5721>Privacy Policy</font>.]]></string>
+    <string name="terms" translatable="false">Terms</string>
+    <string name="privacy" translatable="false">Privacy</string>
+    <string name="policy" translatable="false">Policy</string>
+    <string name="label_old_password" translatable="false">Old password</string>
+    <string name="label_dashboard" translatable="false">Dashboard</string>
+    <string name="label_logout" translatable="false">Logout</string>
+    <string name="label_change_language" translatable="false">Change Language</string>
+    <string name="label_about_us" translatable="false">About Us</string>
+    <string name="label_help_feedback" translatable="false">Help &amp; Feedback</string>
+    <string name="label_more" translatable="false">More</string>
+    <string name="label_store" translatable="false">Store</string>
+    <string name="label_video_detail" translatable="false">Video Details</string>
+    <string name="label_profile" translatable="false">Profile</string>
+    <string name="label_notification" translatable="false">Notification</string>
+
+    <!--Non Translatable-->
+    <string name="label_language_english" translatable="false">English</string>
+    <string name="label_language_arabic" translatable="false">عربى</string>
+    <string name="default_notification_channel_id" translatable="false">base_structure</string>
+    <string name="label_profile_update" translatable="false">Profile filled Successfully</string>
+
+
+    <!--On Board Strings-->
+    <string name="label_next" translatable="false">Next</string>
+    <string name="label_get_started" translatable="false">Get Started</string>
+    <string name="label_skip" translatable="false">Skip</string>
+    <string name="onboarding_slide1_title" translatable="false">Create an account</string>
+    <string name="onboarding_slide1_subtitle" translatable="false">Connect with people around the world</string>
+    <string name="onboarding_slide1_desc" translatable="false">User will be able to give you live, chat and meet
+        with people nearby.</string>
+
+    <string name="onboarding_slide2_title" translatable="false">Login to your account</string>
+    <string name="onboarding_slide2_subtitle" translatable="false">Let\'s build connection with new people</string>
+    <string name="onboarding_slide2_desc" translatable="false">Connect helps you locate the people around you who
+        are closest from your home.</string>
+
+    <string name="onboarding_slide3_title" translatable="false">Login to your account</string>
+    <string name="onboarding_slide3_subtitle" translatable="false">Feel the happiness</string>
+    <string name="onboarding_slide3_desc" translatable="false">User will be able to give you live, chat and meet
+        with people nearby.</string>
+    <string name="label_image_video_preview" translatable="false"><![CDATA[Image & Video Preview]]></string>
+    <string name="google" translatable="false">Google</string>
+    <string name="facebook" translatable="false">Facebook</string>
+    <string name="label_msg_change_language" translatable="false">Do you want to change application language?</string>
+    <string name="label_terms_condition" translatable="false"><![CDATA[Terms & Condition]]></string>
+    <string name="label_privacy_policy" translatable="false">Privacy Policy</string>
+    <string name="label_rate_video" translatable="false">Rate Video</string>
+    <string name="msg_storage_permission_needed_to_choose_image" translatable="false">Storage permission is needed to choose photo</string>
+    <string name="str_warning" translatable="false">Warning!</string>
+    <string name="str_info" translatable="false">Info</string>
+
+    <string name="label_error_tap_to_retry" translatable="false">ERROR !! Tap to retry.</string>
+    <string name="label_retry" translatable="false">Retry</string>
+    <string name="label_list_to_grid" translatable="false">List to Grid</string>
+    <string name="label_camera" translatable="false">Take Photo</string>
+    <string name="label_choose_photo" translatable="false">Choose Photo</string>
+    <string name="msg_camera_permission_needed_to_capture_image" translatable="false">Camera permission is needed to take photo</string>
+    <string name="label_verification_code" translatable="false">Verification Code</string>
+    <string name="label_verification_code_subtext" translatable="false">Please type verification code sent to</string>
+    <string name="label_validate" translatable="false">Validate</string>
+    <string name="label_OTP" translatable="false">OTP</string>
+    <string name="alert_please_enter_otp" translatable="false">Please Enter OTP</string>
+    <string name="alert_please_enter_valid_otp" translatable="false">Please enter valid OTP</string>
+    <string name="label_resend_otp" translatable="false">Resend OTP</string>
+    <string name="label_home" translatable="false">Home</string>
+
+    <!--Google Messages-->
+    <string name="google_login_success" translatable="false">Google account login successfully</string>
+    <string name="google_logout_success" translatable="false">Google account logout successfully</string>
+    <string name="general_error" translatable="false">Something went wrong</string>
+
+
+    <!--Facebook Messages and Stings-->
+    <string name="facebook_app_id" translatable="false">2498483633575301</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb2498483633575301</string>
+    <string name="facebook_logout_error" translatable="false">Facebook logout failed</string>
+    <string name="facebook_request_cancel" translatable="false">Facebook request cancel</string>
+    <string name="facebook_login_error" translatable="false">Facebook login failed</string>
+    <string name="label_login_successfully" translatable="false">Login Successfully</string>
+    <string name="add_new_address"> + ADD NEW ADDRESS</string>
+    <string name="other" translatable="false">Other</string>
+    <string name="you_have_no_default_shipping_address_in_your_address_book" translatable="false">You have no default shipping address in your address book</string>
+    <string name="shipping_address" translatable="false">Shipping Address</string>
+    <string name="billing_address" translatable="false">Billing Address</string>
+    <string name="you_didn_t_reviewed_any_of_the_items_yet" translatable="false">You didn\'t reviewed any of the items yet.</string>
+    <string name="you_didn_t_add_anything_to_wishlist_yet" translatable="false">You didn\'t add anything to wishlist yet</string>
+    <string name="no_orders" translatable="false">No Orders</string>
+    <string name="you_have_not_placed_any_order_with_us_yet" translatable="false">You have not placed any order with us yet</string>
+    <string name="no_returns_orders" translatable="false">No Returns Orders</string>
+    <string name="wallet_history" translatable="false">WALLET HISTORY</string>
+    <string name="wallet_amount_0_00" translatable="false">WALLET AMOUNT : 0.00</string>
+    <string name="no_transaction_available" translatable="false">No transaction available</string>
+    <string name="your_location" translatable="false">YOUR LOCATION</string>
+    <string name="office" translatable="false">Office</string>
+    <string name="complete_address" translatable="false">Complete Address</string>
+    <string name="company" translatable="false">Company</string>
+    <string name="postalcode" translatable="false">Postal Code</string>
+    <string name="mobile_number" translatable="false">Mobile Number*</string>
+    <string name="add_address" translatable="false">ADD ADDRESS</string>
+    <string name="country" translatable="false">Country</string>
+    <string name="emirate" translatable="false">Emirate</string>
+    <string name="area" translatable="false">Area</string>
+    <string name="mark_as_billing_address" translatable="false">Mark as billing address</string>
+    <string name="mark_as_shipping_address" translatable="false">Mark as shipping address</string>
+    <string name="shopbycategory" translatable="false">Shop by Category</string>
+    <string name="related_product_list" translatable="false">Related Product List</string>
+    <string name="upsell_product_list">UpSell Product List</string>
+    <string name="sort">SORT</string>
+    <string name="position">Position</string>
+    <string name="lowtohigh">Low to High</string>
+    <string name="hightolaw">High to Low</string>
+    <string name="bestseller">Bestseller</string>
+
+
+</resources>
+
+
+

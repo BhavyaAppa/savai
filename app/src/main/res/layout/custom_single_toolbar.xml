@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/mainLayout"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/tlToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/purple_dark_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gdEditStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_1sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gdEditEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_3sdp" />
+
+
+                <!--image and editText-->
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/imageSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="ivAlokozapShop,etSearch" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivAlokozapShop"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/ic_alokozay_logo_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/etSearch"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/rounded_edittext"
+                    android:drawableEnd="@drawable/ic_search_icon"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="@string/search"
+                    android:paddingStart="@dimen/_7sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:textColorHint="#7E7E84"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivAlokozapShop"
+                    app:layout_constraintEnd_toEndOf="@id/gdEditEnd"
+                    app:layout_constraintStart_toEndOf="@id/ivAlokozapShop"
+                    app:layout_constraintTop_toTopOf="@id/ivAlokozapShop" />
+
+
+                <!--Alokozay Image Center-->
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/imageCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="ivAlokozapShopCenter" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivAlokozapShopCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/ic_alokozay_logo_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!--image and editText and backArrow-->
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/imageArrowSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="ivArrowWithSearch,ivAlokozapShopWithSearch,etSearchWithSearch" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivArrowWithSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_29sdp"
+                    android:layout_gravity="start"
+                    android:src="@drawable/ic_left_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivAlokozapShopWithSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_alokozay_logo_image"
+                    app:layout_constraintBottom_toBottomOf="@id/ivArrowWithSearch"
+                    app:layout_constraintEnd_toStartOf="@id/etSearchWithSearch"
+                    app:layout_constraintStart_toEndOf="@id/ivArrowWithSearch"
+                    app:layout_constraintTop_toTopOf="@id/ivArrowWithSearch" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearchWithSearch"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:background="@drawable/rounded_edittext"
+                    android:drawableEnd="@drawable/ic_search_icon"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="@string/search"
+                    android:paddingStart="@dimen/_7sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivAlokozapShopWithSearch"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivAlokozapShopWithSearch"
+                    app:layout_constraintTop_toTopOf="@id/ivAlokozapShopWithSearch" />
+
+
+                <!--image and  backArrow-->
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/imageArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="ivArrowWithAlokozay,ivAlokozapShopWithAlokozay" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivArrowWithAlokozay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_left_arrow"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivAlokozapShopWithAlokozay"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivAlokozapShopWithAlokozay" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivAlokozapShopWithAlokozay"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:padding="@dimen/_7sdp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_alokozay_logo_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivArrowWithAlokozay"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
